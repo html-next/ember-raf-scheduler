@@ -71,6 +71,18 @@ test('throws if it attempts to schedule to a queue that does not exist', functio
 test('jobs can be canceled', async function(assert) {
   assert.expect(0);
 
+  const job = scheduler.schedule('measure', () => {
+    assert.ok(false);
+  });
+
+  job.cancel();
+
+  await wait();
+});
+
+test('jobs can be canceled from tokens', async function(assert) {
+  assert.expect(0);
+
   const token = new Token();
 
   scheduler.schedule('measure', () => {
