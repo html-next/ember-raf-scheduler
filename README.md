@@ -2,6 +2,8 @@
 
 # ember-raf-scheduler
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/html-next/ember-raf-scheduler.svg)](https://greenkeeper.io/)
+
 Super simple RAF scheduler that integrates with the Ember runloop
 
 ## Basics
