@@ -1,5 +1,5 @@
 import { DEBUG } from '@glimmer/env';
-import { run } from '@ember/runloop';
+import { begin, end } from '@ember/runloop';
 import { assert } from '@ember/debug';
 
 export class Token {
@@ -78,14 +78,14 @@ export class Scheduler {
     this.jobs = 0;
 
     if (this.sync.length > 0) {
-      run.begin();
+      begin();
       q = this.sync;
       this.sync = [];
 
       for (i = 0; i < q.length; i++) {
         q[i]();
       }
-      run.end();
+      end();
     }
 
     if (this.layout.length > 0) {
