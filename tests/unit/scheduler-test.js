@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { scheduler, Token } from 'ember-raf-scheduler';
-import wait from 'ember-test-helpers/wait';
+import { settled } from '@ember/test-helpers'
 
 module('scheduler');
 
@@ -9,7 +9,7 @@ test('it works', async function(assert) {
     assert.ok('scheduled function runs correctly');
   });
 
-  await wait();
+  await settled();
 });
 
 test('it runs scheduled tasks in the correct order', async function(assert) {
@@ -36,7 +36,7 @@ test('it runs scheduled tasks in the correct order', async function(assert) {
     assert.equal(callCount++, 4, 'sequence is correct');
   });
 
-  await wait();
+  await settled();
 });
 
 test('it schedules another flush if jobs have been pushed during a flush', async function(assert) {
@@ -59,7 +59,7 @@ test('it schedules another flush if jobs have been pushed during a flush', async
     assert.equal(callCount, 1, 'call count is correct after first RAF')
   })
 
-  await wait();
+  await settled();
 });
 
 test('throws if it attempts to schedule to a queue that does not exist', function(assert) {
@@ -77,7 +77,7 @@ test('jobs can be canceled', async function(assert) {
 
   job.cancel();
 
-  await wait();
+  await settled();
 });
 
 test('jobs can be canceled from tokens', async function(assert) {
@@ -91,7 +91,7 @@ test('jobs can be canceled from tokens', async function(assert) {
 
   token.cancel();
 
-  await wait();
+  await settled();
 });
 
 test('jobs can be canceled from parent tokens', async function(assert) {
@@ -106,7 +106,7 @@ test('jobs can be canceled from parent tokens', async function(assert) {
 
   parentToken.cancel();
 
-  await wait();
+  await settled();
 });
 
 test('jobs can be forgotten by the scheduler', async function(assert) {
@@ -120,7 +120,7 @@ test('jobs can be forgotten by the scheduler', async function(assert) {
 
   scheduler.forget(token);
 
-  await wait();
+  await settled();
 });
 
 test('test waiter works', async function(assert) {
@@ -138,5 +138,5 @@ test('test waiter works', async function(assert) {
 
   scheduler.schedule('measure', reschedule);
 
-  await wait();
+  await settled();
 });
