@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import scheduler from 'ember-raf-scheduler';
 
 export default function registerWaiter() {
