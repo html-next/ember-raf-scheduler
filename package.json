@@ -11,7 +11,10 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": {	
+    "type": "git",
+    "url": "https://github.com/html-next/ember-raf-scheduler.git"
+  },
   "scripts": {
     "build": "ember build",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
