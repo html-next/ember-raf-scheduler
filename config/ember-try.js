@@ -12,7 +12,6 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~2.12.0',
-            'ember-cli-htmlbars': '^4.3.1',
           },
         },
       },
@@ -21,7 +20,6 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~2.18.0',
-            'ember-cli-htmlbars': '^4.3.1',
           },
         },
       },
@@ -30,7 +28,6 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~3.4.0',
-            'ember-cli-htmlbars': '^4.3.1',
           },
         },
       },
