@@ -38,6 +38,7 @@ jobs:
     name: Run Tests
     runs-on: ubuntu-18.04
     strategy:
+      fail-fast: false
       matrix:
         ember-version:
           [
