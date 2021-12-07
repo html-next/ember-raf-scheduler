@@ -62,12 +62,6 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Node Modules Cache
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ci-yarn-${{ matrix.ember-version }}-${{ hashFiles('**/yarn.lock') }}
-
       - name: Install
         run: yarn install --frozen-lockfile --ignore-engines
 
