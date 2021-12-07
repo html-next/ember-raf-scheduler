@@ -13,7 +13,10 @@ export class Token {
   }
 
   get cancelled() {
-    return this._cancelled || (this._cancelled = this._parent ? this._parent.cancelled : false);
+    return (
+      this._cancelled ||
+      (this._cancelled = this._parent ? this._parent.cancelled : false)
+    );
   }
 
   cancel() {
@@ -45,7 +48,10 @@ export class Scheduler {
   }
 
   schedule(queueName, cb, parent) {
-    assert(`Attempted to schedule to unknown queue: ${queueName}`, queueName in this);
+    assert(
+      `Attempted to schedule to unknown queue: ${queueName}`,
+      queueName in this
+    );
 
     this.jobs++;
     let token = new Token(parent);
