@@ -5,15 +5,15 @@
   "keywords": [
     "ember-addon"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/html-next/ember-raf-scheduler.git"
+  },
   "license": "MIT",
   "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/html-next/ember-raf-scheduler.git"
   },
   "scripts": {
     "build": "ember build --environment=production",
@@ -48,6 +48,7 @@
     "ember-disable-prototype-extensions": "^1.1.3",
     "ember-export-application-global": "^2.0.1",
     "ember-load-initializers": "^2.1.2",
+    "ember-maybe-import-regenerator": "^1.0.0",
     "ember-page-title": "^6.0.3",
     "ember-qunit": "^5.1.1",
     "ember-resolver": "^8.0.2",
@@ -65,15 +66,35 @@
     "prettier": "^2.2.1",
     "qunit": "^2.13.0",
     "qunit-dom": "^1.6.0",
+    "release-it": "^14.2.1",
+    "release-it-lerna-changelog": "^3.1.0",
     "webpack": "^5.65.0"
   },
   "engines": {
     "node": "10.* || >= 12"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "ember": {
     "edition": "octane"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   }
 }
