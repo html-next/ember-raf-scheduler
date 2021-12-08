@@ -1,18 +1,21 @@
 import { module, test } from 'qunit';
 import { scheduler, Token } from 'ember-raf-scheduler';
-import wait from 'ember-test-helpers/wait';
+import { settled } from '@ember/test-helpers';
 
 module('scheduler');
 
-test('it works', async function(assert) {
+test('it works', async function (assert) {
+  assert.expect(1);
+
   scheduler.schedule('sync', () => {
     assert.ok('scheduled function runs correctly');
   });
 
-  await wait();
+  await settled();
 });
 
-test('it runs scheduled tasks in the correct order', async function(assert) {
+test('it runs scheduled tasks in the correct order', async function (assert) {
+  assert.expect(5);
 
   let callCount = 0;
 
@@ -36,10 +39,10 @@ test('it runs scheduled tasks in the correct order', async function(assert) {
     assert.equal(callCount++, 4, 'sequence is correct');
   });
 
-  await wait();
+  await settled();
 });
 
-test('it schedules another flush if jobs have been pushed during a flush', async function(assert) {
+test('it schedules another flush if jobs have been pushed during a flush', async function (assert) {
   assert.expect(3);
 
   let callCount = 0;
@@ -56,19 +59,19 @@ test('it schedules another flush if jobs have been pushed during a flush', async
 
   // Verify that the second RAF is actually scheduled
   requestAnimationFrame(() => {
-    assert.equal(callCount, 1, 'call count is correct after first RAF')
-  })
+    assert.equal(callCount, 1, 'call count is correct after first RAF');
+  });
 
-  await wait();
+  await settled();
 });
 
-test('throws if it attempts to schedule to a queue that does not exist', function(assert) {
+test('throws if it attempts to schedule to a queue that does not exist', function (assert) {
   assert.throws(() => {
     scheduler.schedule('foo', () => {});
   }, /Attempted to schedule to unknown queue: foo/);
 });
 
-test('jobs can be canceled', async function(assert) {
+test('jobs can be canceled', async function (assert) {
   assert.expect(0);
 
   const job = scheduler.schedule('measure', () => {
@@ -77,53 +80,67 @@ test('jobs can be canceled', async function(assert) {
 
   job.cancel();
 
-  await wait();
+  await settled();
 });
 
-test('jobs can be canceled from tokens', async function(assert) {
+test('jobs can be canceled from tokens', async function (assert) {
   assert.expect(0);
 
   const token = new Token();
 
-  scheduler.schedule('measure', () => {
-    assert.ok(false);
-  }, token);
+  scheduler.schedule(
+    'measure',
+    () => {
+      assert.ok(false);
+    },
+    token
+  );
 
   token.cancel();
 
-  await wait();
+  await settled();
 });
 
-test('jobs can be canceled from parent tokens', async function(assert) {
+test('jobs can be canceled from parent tokens', async function (assert) {
   assert.expect(0);
 
   const parentToken = new Token();
   const childToken = new Token(parentToken);
 
-  scheduler.schedule('measure', () => {
-    assert.ok(false);
-  }, childToken);
+  scheduler.schedule(
+    'measure',
+    () => {
+      assert.ok(false);
+    },
+    childToken
+  );
 
   parentToken.cancel();
 
-  await wait();
+  await settled();
 });
 
-test('jobs can be forgotten by the scheduler', async function(assert) {
+test('jobs can be forgotten by the scheduler', async function (assert) {
   assert.expect(0);
 
   const token = new Token();
 
-  scheduler.schedule('measure', () => {
-    assert.ok(false);
-  }, token);
+  scheduler.schedule(
+    'measure',
+    () => {
+      assert.ok(false);
+    },
+    token
+  );
 
   scheduler.forget(token);
 
-  await wait();
+  await settled();
 });
 
-test('test waiter works', async function(assert) {
+test('test waiter works', async function (assert) {
+  assert.expect(1);
+
   let callCount = 0;
 
   function reschedule() {
@@ -138,5 +155,5 @@ test('test waiter works', async function(assert) {
 
   scheduler.schedule('measure', reschedule);
 
-  await wait();
+  await settled();
 });

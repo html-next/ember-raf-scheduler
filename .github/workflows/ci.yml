@@ -38,6 +38,7 @@ jobs:
     name: Run Tests
     runs-on: ubuntu-18.04
     strategy:
+      fail-fast: false
       matrix:
         ember-version:
           [
@@ -49,9 +50,12 @@ jobs:
             ember-lts-3.12,
             ember-lts-3.16,
             ember-lts-3.20,
+            ember-lts-3.24,
             ember-release,
             ember-beta,
             ember-canary,
+            embroider-safe,
+            # embroider-optimized
           ]
 
     steps:
@@ -62,12 +66,6 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12.x
-
-      - name: Node Modules Cache
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ci-yarn-${{ matrix.ember-version }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install
         run: yarn install --frozen-lockfile --ignore-engines
