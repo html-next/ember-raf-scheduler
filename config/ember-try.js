@@ -88,11 +88,36 @@ module.exports = async function() {
         }
       },
       {
+        name: 'ember-lts-3.24',
+        npm: {
+          devDependencies: {
+            'ember-source': '~3.24.0'
+          }
+        }
+      },
+      {
+        name: 'ember-lts-3.28',
+        npm: {
+          devDependencies: {
+            'ember-source': '~3.28.0'
+          }
+        }
+      },
+      {
         name: 'ember-release',
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('release')
+          },
+          ember: {
+            edition: 'octane'
           }
+        },
+        env: {
+          EMBER_OPTIONAL_FEATURES: JSON.stringify({
+            'application-template-wrapper': false,
+            'template-only-glimmer-components': true,
+          })
         }
       },
       {
@@ -100,7 +125,16 @@ module.exports = async function() {
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('beta')
+          },
+          ember: {
+            edition: 'octane'
           }
+        },
+        env: {
+          EMBER_OPTIONAL_FEATURES: JSON.stringify({
+            'application-template-wrapper': false,
+            'template-only-glimmer-components': true,
+          })
         }
       },
       {
@@ -108,7 +142,16 @@ module.exports = async function() {
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('canary')
+          },
+          ember: {
+            edition: 'octane'
           }
+        },
+        env: {
+          EMBER_OPTIONAL_FEATURES: JSON.stringify({
+            'application-template-wrapper': false,
+            'template-only-glimmer-components': true,
+          })
         }
       },
       // The default `.travis.yml` runs this scenario via `yarn test`,
