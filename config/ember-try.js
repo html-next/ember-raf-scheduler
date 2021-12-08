@@ -9,6 +9,30 @@ module.exports = async function () {
     useYarn: true,
     scenarios: [
       {
+        name: 'ember-lts-2.8',
+        bower: {
+          dependencies: {
+            ember: 'components/ember#lts-2-8',
+          },
+          resolutions: {
+            ember: 'lts-2-8',
+          },
+        },
+        npm: {
+          devDependencies: {
+            '@ember/test-helpers': null,
+            'ember-cli-dependency-checker': '^2.0.0',
+            'ember-cli-htmlbars': '3.0.1',
+            'ember-cli-shims': '^1.2.0',
+            'ember-qunit': '^4.5.1',
+            'ember-resolver': '^5.1.1',
+            'ember-source': null,
+            'ember-source-channel-url': '^2.0.1',
+            qunit: null,
+          },
+        },
+      },
+      {
         name: 'ember-lts-2.12',
         npm: {
           devDependencies: {
