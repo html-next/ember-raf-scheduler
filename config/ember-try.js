@@ -21,6 +21,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             '@ember/test-helpers': null,
+            'ember-auto-import': null,
             'ember-cli-dependency-checker': '^2.0.0',
             'ember-cli-htmlbars': '3.0.1',
             'ember-cli-shims': '^1.2.0',
