@@ -52,7 +52,7 @@ jobs:
             ember-beta,
             ember-canary,
             embroider-safe,
-            embroider-optimized
+            # embroider-optimized
           ]
 
     steps:

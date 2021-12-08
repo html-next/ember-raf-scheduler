@@ -5,6 +5,8 @@ import { settled } from '@ember/test-helpers';
 module('scheduler');
 
 test('it works', async function (assert) {
+  assert.expect(1);
+
   scheduler.schedule('sync', () => {
     assert.ok('scheduled function runs correctly');
   });
@@ -13,6 +15,8 @@ test('it works', async function (assert) {
 });
 
 test('it runs scheduled tasks in the correct order', async function (assert) {
+  assert.expect(5);
+
   let callCount = 0;
 
   scheduler.schedule('sync', () => {
@@ -135,6 +139,8 @@ test('jobs can be forgotten by the scheduler', async function (assert) {
 });
 
 test('test waiter works', async function (assert) {
+  assert.expect(1);
+
   let callCount = 0;
 
   function reschedule() {
