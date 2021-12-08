@@ -12,10 +12,15 @@ module.exports = async function () {
         name: 'ember-lts-2.12',
         npm: {
           devDependencies: {
+            '@ember/test-helpers': null,
+            'ember-cli-dependency-checker': '^2.0.0',
             'ember-cli-htmlbars': '3.0.1',
             'ember-cli-shims': '^1.2.0',
+            'ember-qunit': '^4.5.1',
             'ember-resolver': '^5.1.1',
             'ember-source': '~2.12.0',
+            'ember-source-channel-url': '^2.0.1',
+            qunit: null,
           },
         },
       },
@@ -23,10 +28,15 @@ module.exports = async function () {
         name: 'ember-lts-2.18',
         npm: {
           devDependencies: {
+            '@ember/test-helpers': null,
+            'ember-cli-dependency-checker': '^2.0.0',
             'ember-cli-htmlbars': '3.0.1',
             'ember-cli-shims': '^1.2.0',
+            'ember-qunit': '^4.5.1',
             'ember-resolver': '^5.1.1',
             'ember-source': '~2.18.0',
+            'ember-source-channel-url': '^2.0.1',
+            qunit: null,
           },
         },
       },
