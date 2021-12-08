@@ -12,6 +12,9 @@ module.exports = async function () {
         name: 'ember-lts-2.12',
         npm: {
           devDependencies: {
+            'ember-cli-htmlbars': '3.0.1',
+            'ember-cli-shims': '^1.2.0',
+            'ember-resolver': '^5.1.1',
             'ember-source': '~2.12.0',
           },
         },
@@ -20,6 +23,9 @@ module.exports = async function () {
         name: 'ember-lts-2.18',
         npm: {
           devDependencies: {
+            'ember-cli-htmlbars': '3.0.1',
+            'ember-cli-shims': '^1.2.0',
+            'ember-resolver': '^5.1.1',
             'ember-source': '~2.18.0',
           },
         },
