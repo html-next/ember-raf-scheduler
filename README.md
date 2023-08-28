@@ -4,6 +4,12 @@
 
 Super simple RAF scheduler that integrates with the Ember runloop
 
+## Compatibility
+
+* Ember.js v3.12 or above (possibly older, but older than 3.12 is untested)
+* Ember CLI v4.4 or above
+* Node.js v16 or above
+
 ## Basics
 
 Super simple example:
