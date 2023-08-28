@@ -9,79 +9,6 @@ module.exports = async function () {
     useYarn: true,
     scenarios: [
       {
-        name: 'ember-lts-2.8',
-        bower: {
-          dependencies: {
-            ember: 'components/ember#lts-2-8',
-          },
-          resolutions: {
-            ember: 'lts-2-8',
-          },
-        },
-        npm: {
-          devDependencies: {
-            '@ember/test-helpers': null,
-            'ember-auto-import': null,
-            'ember-cli-dependency-checker': '^2.0.0',
-            'ember-cli-htmlbars': '3.0.1',
-            'ember-cli-shims': '^1.2.0',
-            'ember-qunit': '^4.5.1',
-            'ember-resolver': '^5.1.1',
-            'ember-source': null,
-            'ember-source-channel-url': '^2.0.1',
-            qunit: null,
-          },
-        },
-      },
-      {
-        name: 'ember-lts-2.12',
-        npm: {
-          devDependencies: {
-            '@ember/test-helpers': null,
-            'ember-cli-dependency-checker': '^2.0.0',
-            'ember-cli-htmlbars': '3.0.1',
-            'ember-cli-shims': '^1.2.0',
-            'ember-qunit': '^4.5.1',
-            'ember-resolver': '^5.1.1',
-            'ember-source': '~2.12.0',
-            'ember-source-channel-url': '^2.0.1',
-            qunit: null,
-          },
-        },
-      },
-      {
-        name: 'ember-lts-2.18',
-        npm: {
-          devDependencies: {
-            '@ember/test-helpers': null,
-            'ember-cli-dependency-checker': '^2.0.0',
-            'ember-cli-htmlbars': '3.0.1',
-            'ember-cli-shims': '^1.2.0',
-            'ember-qunit': '^4.5.1',
-            'ember-resolver': '^5.1.1',
-            'ember-source': '~2.18.0',
-            'ember-source-channel-url': '^2.0.1',
-            qunit: null,
-          },
-        },
-      },
-      {
-        name: 'ember-lts-3.4',
-        npm: {
-          devDependencies: {
-            'ember-source': '~3.4.0',
-          },
-        },
-      },
-      {
-        name: 'ember-lts-3.8',
-        npm: {
-          devDependencies: {
-            'ember-source': '~3.8.0',
-          },
-        },
-      },
-      {
         name: 'ember-lts-3.12',
         npm: {
           devDependencies: {
@@ -94,22 +21,6 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~3.16.0',
-          },
-        },
-      },
-      {
-        name: 'ember-lts-3.20',
-        npm: {
-          devDependencies: {
-            'ember-source': '~3.20.5',
-          },
-        },
-      },
-      {
-        name: 'ember-lts-3.24',
-        npm: {
-          devDependencies: {
-            'ember-source': '~3.24.3',
           },
         },
       },
@@ -130,10 +41,18 @@ module.exports = async function () {
         },
       },
       {
-        name: 'ember-4.5',
+        name: 'ember-lts-4.12',
         npm: {
           devDependencies: {
-            'ember-source': '~4.5.0',
+            'ember-source': '~4.12.0',
+          },
+        },
+      },
+      {
+        name: 'ember-5.2',
+        npm: {
+          devDependencies: {
+            'ember-source': '~5.2.0',
           },
         },
       },
