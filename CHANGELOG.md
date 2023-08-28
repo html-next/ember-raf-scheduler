@@ -1,4 +1,13 @@
 
+## v0.4.0 (2023-08-28)
+
+#### :boom: Breaking Change
+* [#14](https://github.com/html-next/ember-raf-scheduler/pull/14) Add support for Ember 5 in CI, drop old Ember versions ([@mixonic](https://github.com/mixonic))
+
+#### Committers: 1
+- Matthew Beale ([@mixonic](https://github.com/mixonic))
+
+
 ## v0.3.0 (2021-12-09)
 
 #### :rocket: Enhancement
