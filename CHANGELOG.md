@@ -1,4 +1,9 @@
 
+## v0.4.1 (2023-09-09)
+
+* Correct peerDepenencies to allow Ember back to 3.12
+
+
 ## v0.4.0 (2023-08-28)
 
 #### :boom: Breaking Change
