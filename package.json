@@ -40,7 +40,7 @@
     "@ember/string": "^3.0.1",
     "@ember/test-helpers": "^2.9.3",
     "@ember/test-waiters": "^3.1.0",
-    "@embroider/test-setup": "^2.1.1",
+    "@embroider/test-setup": "^4.0.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
     "broccoli-asset-rev": "^3.0.0",
@@ -73,7 +73,10 @@
     "stylelint": "^15.4.0",
     "stylelint-config-standard": "^32.0.0",
     "stylelint-prettier": "^3.0.0",
-    "webpack": "^5.78.0"
+    "webpack": "^5.0.0",
+    "@embroider/core": "^3.4.8",
+    "@embroider/webpack": "^4.0.0",
+    "@embroider/compat": "^3.4.8"
   },
   "peerDependencies": {
     "ember-source": "^3.12.0"
