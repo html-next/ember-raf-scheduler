@@ -1,4 +1,4 @@
-import { DEBUG } from '@glimmer/env';
+import { macroCondition, isDevelopingApp } from '@embroider/macros';
 import { begin, end } from '@ember/runloop';
 import { assert } from '@ember/debug';
 
@@ -7,7 +7,7 @@ export class Token {
     this._parent = parent;
     this._cancelled = false;
 
-    if (DEBUG) {
+    if (macroCondition(isDevelopingApp())) {
       Object.seal(this);
     }
   }
@@ -50,7 +50,7 @@ export class Scheduler {
   schedule(queueName, cb, parent) {
     assert(
       `Attempted to schedule to unknown queue: ${queueName}`,
-      queueName in this
+      queueName in this,
     );
 
     this.jobs++;
