@@ -42,7 +42,7 @@ export class Scheduler {
     this._nextFlush = null;
     this.ticks = 0;
 
-    if (DEBUG) {
+    if (macroCondition(isDevelopingApp())) {
       Object.seal(this);
     }
   }
