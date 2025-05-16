@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.8.9",
+    "@ember/test-waiters": "^2.0.0 || ^3.0.0 || ^4.0.0",
     "@embroider/macros": "^1.15.0"
   },
   "devDependencies": {
