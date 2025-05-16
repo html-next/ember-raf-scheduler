@@ -1,13 +1,16 @@
-import { DEBUG } from '@glimmer/env';
+import { macroCondition, isDevelopingApp } from '@embroider/macros';
 import { begin, end } from '@ember/runloop';
 import { assert } from '@ember/debug';
+import { buildWaiter } from '@ember/test-waiters';
+
+const waiter = buildWaiter('ember-raf-scheduler-waiter');
 
 export class Token {
   constructor(parent) {
     this._parent = parent;
     this._cancelled = false;
 
-    if (DEBUG) {
+    if (macroCondition(isDevelopingApp())) {
       Object.seal(this);
     }
   }
@@ -25,10 +28,13 @@ export class Token {
 }
 
 function job(cb, token) {
+  let jobToken = waiter.beginAsync();
   return function execJob() {
     if (token.cancelled === false) {
       cb();
     }
+
+    waiter.endAsync(jobToken);
   };
 }
 
@@ -42,7 +48,7 @@ export class Scheduler {
     this._nextFlush = null;
     this.ticks = 0;
 
-    if (DEBUG) {
+    if (macroCondition(isDevelopingApp())) {
       Object.seal(this);
     }
   }
@@ -50,7 +56,7 @@ export class Scheduler {
   schedule(queueName, cb, parent) {
     assert(
       `Attempted to schedule to unknown queue: ${queueName}`,
-      queueName in this
+      queueName in this,
     );
 
     this.jobs++;
