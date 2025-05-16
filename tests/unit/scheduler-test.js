@@ -92,7 +92,7 @@ module('scheduler', function () {
       () => {
         assert.ok(false);
       },
-      token
+      token,
     );
 
     token.cancel();
@@ -111,7 +111,7 @@ module('scheduler', function () {
       () => {
         assert.ok(false);
       },
-      childToken
+      childToken,
     );
 
     parentToken.cancel();
@@ -129,7 +129,7 @@ module('scheduler', function () {
       () => {
         assert.ok(false);
       },
-      token
+      token,
     );
 
     scheduler.forget(token);
