@@ -66,6 +66,7 @@
   "ember": {
     "edition": "octane"
   },
+  "packageManager": "pnpm@10.11.0",
   "ember-addon": {
     "version": 2,
     "type": "addon",
