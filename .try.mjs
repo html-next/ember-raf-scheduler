@@ -64,6 +64,13 @@ function compatEmberScenario(name, emberVersion) {
     },
     files: {
       'ember-cli-build.js': emberCliBuildJS(),
+      'config/optional-features.json': JSON.stringify({
+        'application-template-wrapper': false,
+        'default-async-observers': true,
+        'jquery-integration': false,
+        'template-only-glimmer-components': true,
+        'no-implicit-route-model': true,
+      }),
     },
   };
 }
