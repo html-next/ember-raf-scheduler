@@ -57,6 +57,7 @@ function compatEmberScenario(name, emberVersion) {
         'ember-cli': '^5.12.0',
         'ember-auto-import': '^2.10.0',
         '@ember/optional-features': '^2.2.0',
+        'loader.js': '^4.7.0',
       },
     },
     env: {
