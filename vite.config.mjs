@@ -4,9 +4,7 @@ import { babel } from '@rollup/plugin-babel';
 
 export default defineConfig({
   plugins: [
-    ...(process.env.EMBER_COMPAT_BUILD === 'true'
-      ? [classicEmberSupport()]
-      : []),
+    ...(process.env.EMBER_COMPAT_BUILD ? [classicEmberSupport()] : []),
     ember(),
     babel({
       babelHelpers: 'inline',
