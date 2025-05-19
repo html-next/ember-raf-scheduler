@@ -3,7 +3,7 @@ import { deprecate } from '@ember/debug';
 /**
  * @deprecated no longer needed
  */
-export default function regitserWaiter() {
+export default function registerWaiter() {
   deprecate(
     '`registerWaiter` is not longer required. This can now be safely removed.',
     false,
