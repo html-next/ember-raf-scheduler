@@ -53,7 +53,7 @@ function compatEmberScenario(name, emberVersion) {
     npm: {
       devDependencies: {
         'ember-source': emberVersion,
-        '@embroider/compat': '^4.0.0-alpha.14',
+        '@embroider/compat': '^4.0.3',
         'ember-cli': '^5.12.0',
         'ember-auto-import': '^2.10.0',
         '@ember/optional-features': '^2.2.0',
