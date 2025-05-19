@@ -65,11 +65,6 @@ module.exports = {
     ['module:decorator-transforms', {
         runtime: { import: require.resolve('decorator-transforms/runtime-esm') },
     }],
-    ['@babel/plugin-transform-runtime', {
-        absoluteRuntime: __dirname,
-        useESModules: true,
-        regenerator: false,
-    }],
     ...babelCompatSupport(),
   ],
 
