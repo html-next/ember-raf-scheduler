@@ -1,9 +1,12 @@
 import { defineConfig } from 'vite';
-import { extensions, ember } from '@embroider/vite';
+import { extensions, ember, classicEmberSupport } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 
 export default defineConfig({
   plugins: [
+    ...(process.env.EMBER_COMPAT_BUILD === 'true'
+      ? [classicEmberSupport()]
+      : []),
     ember(),
     babel({
       babelHelpers: 'inline',
