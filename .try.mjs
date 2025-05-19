@@ -9,31 +9,21 @@ function scenarios() {
       compatEmberScenario('ember-lts-5.4', '~5.4.0'),
       compatEmberScenario('ember-lts-5.12', '^5.12.0'),
       compatEmberScenario('ember-lts-6.4', '~6.4.0'),
-      {
-        name: 'ember-latest',
-        npm: {
-          devDependencies: {
-            'ember-source': 'npm:ember-source@latest',
-          },
-        },
-      },
-      {
-        name: 'ember-beta',
-        npm: {
-          devDependencies: {
-            'ember-source': 'npm:ember-source@beta',
-          },
-        },
-      },
-      {
-        name: 'ember-canary',
-        npm: {
-          devDependencies: {
-            'ember-source': 'npm:ember-source@alpha',
-          },
-        },
-      },
+      latestEmberScenario('latest'),
+      latestEmberScenario('beta'),
+      latestEmberScenario('alpha'),
     ],
+  };
+}
+
+function latestEmberScenario(tag) {
+  return {
+    name: `ember-${tag}`,
+    npm: {
+      devDependencies: {
+        'ember-source': `npm:ember-source@${tag}`,
+      },
+    },
   };
 }
 
@@ -74,16 +64,21 @@ module.exports = {
 }
 
 function compatEmberScenario(name, emberVersion) {
+  let cliVersion = '^5.12.0';
+
+  if (emberVersion.includes('3.28')) {
+    cliVersion = '^4.12.0';
+  }
+
   return {
     name,
     npm: {
       devDependencies: {
         'ember-source': emberVersion,
         '@embroider/compat': '^4.0.3',
-        'ember-cli': '^5.12.0',
+        'ember-cli': cliVersion,
         'ember-auto-import': '^2.10.0',
         '@ember/optional-features': '^2.2.0',
-        'loader.js': '^4.7.0',
       },
     },
     env: {
