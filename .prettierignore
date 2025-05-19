@@ -4,6 +4,8 @@
 # compiled output
 /dist/
 /declarations/
+*.yaml
+*.yml
 
 # misc
 /coverage/
