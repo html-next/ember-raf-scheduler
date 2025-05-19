@@ -3,7 +3,7 @@ import { extensions, ember, classicEmberSupport } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 
 // For scenario testing
-const isCompat = Boolean(process.env.EMBER_COMPAT_BUILD);
+const isCompat = Boolean(process.env.ENABLE_COMPAT_BUILD);
 
 console.log({ isCompat });
 
