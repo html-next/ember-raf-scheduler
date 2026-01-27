@@ -1,7 +1,9 @@
 import { macroCondition, isDevelopingApp } from '@embroider/macros';
 import { begin, end } from '@ember/runloop';
 import { assert } from '@ember/debug';
-import { registerWaiter } from '@ember/test';
+import { buildWaiter } from '@ember/test-waiters';
+
+const waiter = buildWaiter('ember-raf-scheduler-waiter');
 
 export class Token {
   constructor(parent) {
@@ -26,10 +28,13 @@ export class Token {
 }
 
 function job(cb, token) {
+  let jobToken = waiter.beginAsync();
   return function execJob() {
     if (token.cancelled === false) {
       cb();
     }
+
+    waiter.endAsync(jobToken);
   };
 }
 
@@ -130,7 +135,5 @@ export class Scheduler {
 }
 
 export const scheduler = new Scheduler();
-
-registerWaiter(() => scheduler.jobs === 0);
 
 export default scheduler;
