@@ -2,6 +2,7 @@
 /blueprints/*/files/
 
 # compiled output
+CHANGELOG.md
 /dist/
 /declarations/
 *.yaml
