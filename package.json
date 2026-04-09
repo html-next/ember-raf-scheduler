@@ -34,13 +34,13 @@
   },
   "dependencies": {
     "@ember/test-waiters": "^2.0.0 || ^3.0.0 || ^4.0.0",
-    "@embroider/addon-shim": "^1.8.9",
-    "@embroider/macros": "^1.15.0"
+    "@embroider/addon-shim": "^1.10.2",
+    "@embroider/macros": "^1.20.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/eslint-parser": "^7.25.1",
-    "@babel/runtime": "^7.25.6",
+    "@babel/core": "^7.29.0",
+    "@babel/eslint-parser": "^7.28.6",
+    "@babel/runtime": "^7.29.2",
     "@ember/test-helpers": "^5.2.1",
     "@ember/test-waiters": "^4.1.0",
     "@embroider/core": "^4.0.3",
@@ -56,7 +56,7 @@
     "ember-template-lint": "^7.7.0",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-ember": "^12.3.3",
+    "eslint-plugin-ember": "^12.7.5",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^17.15.1",
     "globals": "^16.1.0",

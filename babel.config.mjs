@@ -1,8 +1,8 @@
-const { buildMacros } = require('@embroider/macros/babel');
+import { buildMacros } from '@embroider/macros/babel';
 
 const macros = buildMacros();
 
-module.exports = {
+export default {
   plugins: [
     [
       'babel-plugin-ember-template-compilation',
@@ -14,7 +14,7 @@ module.exports = {
       'module:decorator-transforms',
       {
         runtime: {
-          import: require.resolve('decorator-transforms/runtime-esm'),
+          import: import.meta.resolve('decorator-transforms/runtime-esm'),
         },
       },
     ],
