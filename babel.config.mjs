@@ -10,14 +10,6 @@ export default {
         transforms: [...macros.templateMacros],
       },
     ],
-    [
-      'module:decorator-transforms',
-      {
-        runtime: {
-          import: import.meta.resolve('decorator-transforms/runtime-esm'),
-        },
-      },
-    ],
     ...macros.babelMacros,
   ],
 
