@@ -14,9 +14,6 @@ importers:
       '@embroider/addon-shim':
         specifier: ^1.10.2
         version: 1.10.2
-      '@embroider/macros':
-        specifier: ^1.20.2
-        version: 1.20.2(@babel/core@7.29.0)
     devDependencies:
       '@babel/core':
         specifier: ^7.29.0
@@ -33,6 +30,9 @@ importers:
       '@embroider/core':
         specifier: ^4.0.3
         version: 4.4.7
+      '@embroider/macros':
+        specifier: ^1.20.2
+        version: 1.20.2(@babel/core@7.29.0)
       '@embroider/vite':
         specifier: ^1.1.3
         version: 1.7.2(@embroider/core@4.4.7)(vite@6.4.2(@types/node@25.5.2)(terser@5.46.1)(yaml@2.8.3))
