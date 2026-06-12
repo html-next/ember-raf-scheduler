@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-06-12)
+
+* ember-raf-scheduler 0.5.2 (patch)
+
+#### :bug: Bug Fix
+* `ember-raf-scheduler`
+  * [#28](https://github.com/html-next/ember-raf-scheduler/pull/28) Remove macros ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2026-04-09)
 
 * ember-raf-scheduler 0.5.1 (patch)

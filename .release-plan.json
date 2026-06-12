@@ -2,21 +2,17 @@
   "solution": {
     "ember-raf-scheduler": {
       "impact": "patch",
-      "oldVersion": "0.5.0",
-      "newVersion": "0.5.1",
+      "oldVersion": "0.5.1",
+      "newVersion": "0.5.2",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-04-09)\n\n* ember-raf-scheduler 0.5.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-raf-scheduler`\n  * [#23](https://github.com/html-next/ember-raf-scheduler/pull/23) fix: add waiter token to _flush so settled() waits for pending RAF ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))\n\n#### :house: Internal\n* `ember-raf-scheduler`\n  * [#27](https://github.com/html-next/ember-raf-scheduler/pull/27) Upgrade build libraries ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#26](https://github.com/html-next/ember-raf-scheduler/pull/26) Use node 24 in ci ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#24](https://github.com/html-next/ember-raf-scheduler/pull/24) Update release-plan for OIDC ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- @NullVoxPopuli's reduced-access machine account for AI usage ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2026-06-12)\n\n* ember-raf-scheduler 0.5.2 (patch)\n\n#### :bug: Bug Fix\n* `ember-raf-scheduler`\n  * [#28](https://github.com/html-next/ember-raf-scheduler/pull/28) Remove macros ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
